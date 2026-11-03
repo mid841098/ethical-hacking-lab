@@ -1,0 +1,40 @@
+﻿{
+    "SnapshotVersion":  "1.0.0",
+    "GeneratedAt":  "2026-11-03T19:56:46+05:30",
+    "TargetScope":  "127.0.0.1:3000",
+    "IsolationType":  "RFC 1918 Host-Only Loopback",
+    "ProcessId":  26992,
+    "BoundInterface":  "127.0.0.1",
+    "State":  "Listen",
+    "ArtifactFiles":  [
+                          {
+                              "File":  "lab/server.js",
+                              "Algorithm":  "SHA-256",
+                              "Hash":  "BA7D03687B09CE6D5B509D1CFA591B0F2FEA795009196F6B67E4FD2C632BF696",
+                              "SizeBytes":  17173,
+                              "LastModified":  "2026-11-03T19:55:22Z"
+                          },
+                          {
+                              "File":  "lab/db.js",
+                              "Algorithm":  "SHA-256",
+                              "Hash":  "4350F224D138CCD77C740F1FFAF5AB01FCCCAEDCFB0CCFE1FC461A6AF0549016",
+                              "SizeBytes":  3452,
+                              "LastModified":  "2026-11-03T19:54:49Z"
+                          },
+                          {
+                              "File":  "lab/public/index.html",
+                              "Algorithm":  "SHA-256",
+                              "Hash":  "BC6E13ABCB7341BDD6B2C1AEEA4CEDDD339C8B7946CFE2A42DD50073FA90B86E",
+                              "SizeBytes":  8723,
+                              "LastModified":  "2026-11-03T19:56:10Z"
+                          },
+                          {
+                              "File":  "package.json",
+                              "Algorithm":  "SHA-256",
+                              "Hash":  "8E94BF96AD99B56C86DBDD88A95B9F4C6F0CAFE7C29D18887BFDA2C12BDADF3C",
+                              "SizeBytes":  1136,
+                              "LastModified":  "2026-11-03T19:56:17Z"
+                          }
+                      ],
+    "IntegrityStatus":  "VERIFIED_CLEAN"
+}

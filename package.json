@@ -1,0 +1,29 @@
+{
+  "name": "edvyro-ethical-hacking-authorized-lab",
+  "version": "1.0.0",
+  "description": "Authorized isolated practice lab, reconnaissance inventory, OWASP web testing findings, and professional penetration test report with retest verification for EdVyro Ethical Hacking track.",
+  "main": "lab/server.js",
+  "scripts": {
+    "start": "node lab/server.js",
+    "start:secure": "node lab/server.js --secure",
+    "lab:status": "curl -s http://127.0.0.1:3000/api/health",
+    "baseline": "powershell -ExecutionPolicy Bypass -File ./scripts/baseline-snapshot.ps1",
+    "recon": "powershell -ExecutionPolicy Bypass -File ./scripts/run-recon.ps1",
+    "test:owasp": "powershell -ExecutionPolicy Bypass -File ./scripts/test-owasp-findings.ps1",
+    "retest": "powershell -ExecutionPolicy Bypass -File ./scripts/run-retest.ps1"
+  },
+  "keywords": [
+    "ethical-hacking",
+    "penetration-testing",
+    "isolated-lab",
+    "rules-of-engagement",
+    "reconnaissance",
+    "attack-surface",
+    "owasp-top-10",
+    "idor",
+    "sql-injection",
+    "retest-verification"
+  ],
+  "author": "EdVyro Ethical Hacking Intern",
+  "license": "MIT"
+}

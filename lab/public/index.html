@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authorized Security Training Lab — OWASP Vulnerable Target</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --primary: #8957e5;
+      --primary-hover: #a371f7;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --text-bright: #f0f6fc;
+      --accent-danger: #f85149;
+      --accent-success: #3fb950;
+      --accent-warning: #d29922;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 24px; line-height: 1.6; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    
+    .scope-banner {
+      background: #1f1b2c;
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .badge-iso { background: #238636; color: #fff; }
+    .badge-roe { background: #8957e5; color: #fff; }
+    
+    header { margin-bottom: 30px; }
+    h1 { color: var(--text-bright); font-size: 1.8rem; margin-bottom: 6px; }
+    p.subtitle { color: var(--text-muted); font-size: 0.95rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .card h2 { font-size: 1.15rem; color: var(--text-bright); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px; }
+    
+    label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; font-weight: 600; }
+    input, select, button {
+      width: 100%;
+      padding: 10px 12px;
+      background: #0d1117;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-bright);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    input:focus { outline: none; border-color: var(--primary); }
+    button {
+      background: var(--primary);
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: var(--primary-hover); }
+    
+    pre {
+      background: #090d13;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      color: #79c0ff;
+      max-height: 200px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="scope-banner">
+      <div>
+        <strong>SECURITY LAB SCOPE:</strong> <code>127.0.0.1:3000</code> (Localhost / RFC 1918 Loopback)
+      </div>
+      <div>
+        <span class="badge badge-iso">Isolated Environment</span>
+        <span class="badge badge-roe">RoE Signed</span>
+      </div>
+    </div>
+
+    <header>
+      <h1>Authorized Security Practice Lab (Model Target)</h1>
+      <p class="subtitle">Intentionally vulnerable application conforming to OWASP Top 10 standards for legal penetration testing practice.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Target 1: Product Query Injection -->
+      <div class="card">
+        <h2>01. Product Catalog Search</h2>
+        <p>OWASP Category: A03:2021-Injection (Simulated SQL/Query concatenation).</p>
+        <label for="search-input">Search Term</label>
+        <input type="text" id="search-input" placeholder="e.g. guide or ' OR '1'='1" value="guide">
+        <button onclick="runSearch()">Execute Search Query</button>
+        <label>Response Output</label>
+        <pre id="search-output">// Output will appear here</pre>
+      </div>
+
+      <!-- Target 2: IDOR / Broken Access Control -->
+      <div class="card">
+        <h2>02. User Profile Viewer</h2>
+        <p>OWASP Category: A01:2021-Broken Access Control (Direct Object Reference).</p>
+        <label for="profile-id">User ID Parameter</label>
+        <select id="profile-id">
+          <option value="1">User ID: 1 (Alice Admin - Sensitive Data)</option>
+          <option value="2" selected>User ID: 2 (Bob Student - Normal User)</option>
+          <option value="3">User ID: 3 (Carol Auditor)</option>
+        </select>
+        <button onclick="fetchProfile()">Fetch Profile Data</button>
+        <label>Response Output</label>
+        <pre id="profile-output">// Output will appear here</pre>
+      </div>
+
+      <!-- Target 3: Authentication & Login -->
+      <div class="card">
+        <h2>03. User Authentication Portal</h2>
+        <p>OWASP Category: A07:2021-Identification & Auth Failures (Enumeration & Brute-force).</p>
+        <label for="login-email">Target Email</label>
+        <input type="email" id="login-email" value="alice@internal-lab.local">
+        <label for="login-pass">Password</label>
+        <input type="password" id="login-pass" value="WrongPassword123">
+        <button onclick="attemptLogin()">Submit Login Request</button>
+        <label>Authentication Response</label>
+        <pre id="login-output">// Output will appear here</pre>
+      </div>
+
+      <!-- Target 4: Reflected Input -->
+      <div class="card">
+        <h2>04. Auditor Feedback Reflection</h2>
+        <p>OWASP Category: A03:2021-Reflected Cross-Site Scripting (XSS).</p>
+        <label for="feedback-msg">Feedback Message</label>
+        <input type="text" id="feedback-msg" value="&lt;script&gt;console.log('Testing XSS')&lt;/script&gt;">
+        <button onclick="testFeedback()">Submit Feedback</button>
+        <label>Reflection Link</label>
+        <p><a id="feedback-link" href="/api/feedback?msg=Test" target="_blank" style="color:var(--primary); font-size:0.85rem;">Open Reflected Feedback Endpoint in New Tab &rarr;</a></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Authorized Security Assessment Portfolio | EdVyro Internship Tasks 1 &ndash; 4</p>
+      <p style="font-size:0.75rem; margin-top:4px;">Strictly prohibited from testing third-party networks. Target: <code>127.0.0.1</code>.</p>
+    </footer>
+  </div>
+
+  <script>
+    async function runSearch() {
+      const q = encodeURIComponent(document.getElementById('search-input').value);
+      try {
+        const res = await fetch(`/api/products/search?q=${q}`);
+        const data = await res.json();
+        document.getElementById('search-output').textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById('search-output').textContent = 'Error: ' + err.message;
+      }
+    }
+
+    async function fetchProfile() {
+      const id = document.getElementById('profile-id').value;
+      try {
+        const res = await fetch(`/api/profile?id=${id}`);
+        const data = await res.json();
+        document.getElementById('profile-output').textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById('profile-output').textContent = 'Error: ' + err.message;
+      }
+    }
+
+    async function attemptLogin() {
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-pass').value;
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+        document.getElementById('login-output').textContent = `[HTTP Status: ${res.status}]\n` + JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById('login-output').textContent = 'Error: ' + err.message;
+      }
+    }
+
+    function testFeedback() {
+      const msg = encodeURIComponent(document.getElementById('feedback-msg').value);
+      const url = `/api/feedback?msg=${msg}`;
+      document.getElementById('feedback-link').href = url;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
