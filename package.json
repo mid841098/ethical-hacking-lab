@@ -8,9 +8,10 @@
     "start:secure": "node lab/server.js --secure",
     "lab:status": "curl -s http://127.0.0.1:3000/api/health",
     "baseline": "powershell -ExecutionPolicy Bypass -File ./scripts/baseline-snapshot.ps1",
-    "recon": "powershell -ExecutionPolicy Bypass -File ./scripts/run-recon.ps1",
-    "test:owasp": "powershell -ExecutionPolicy Bypass -File ./scripts/test-owasp-findings.ps1",
-    "retest": "powershell -ExecutionPolicy Bypass -File ./scripts/run-retest.ps1"
+    "recon": "node ./scripts/run-recon.js",
+    "test:owasp": "node ./scripts/test-owasp-findings.js",
+    "retest": "node ./scripts/run-retest.js",
+    "test": "node ./scripts/run-retest.js"
   },
   "keywords": [
     "ethical-hacking",

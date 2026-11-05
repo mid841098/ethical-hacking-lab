@@ -2,7 +2,7 @@
 
 **Engagement Track:** Ethical Hacking (Task 4: Penetration Test Report and Retest)  
 **Target Environment:** Authorized Security Practice Sandbox (`127.0.0.1:3000`)  
-**Assessment Period:** November 03, 2026  
+**Assessment Period:** November 03–05, 2026  
 **Auditor:** Authorized Lead Security Intern  
 **Target Organization / Host:** Local Isolated Security Practice Lab  
 
