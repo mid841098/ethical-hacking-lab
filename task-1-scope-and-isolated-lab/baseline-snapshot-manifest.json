@@ -1,9 +1,9 @@
 ﻿{
     "SnapshotVersion":  "1.0.0",
-    "GeneratedAt":  "2026-11-03T20:10:04+05:30",
+    "GeneratedAt":  "2026-11-05T18:09:48+05:30",
     "TargetScope":  "127.0.0.1:3000",
     "IsolationType":  "RFC 1918 Host-Only Loopback",
-    "ProcessId":  26992,
+    "ProcessId":  32312,
     "BoundInterface":  "127.0.0.1",
     "State":  "Listen",
     "ArtifactFiles":  [

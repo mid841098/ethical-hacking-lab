@@ -1,4 +1,4 @@
-# Authorized Penetration Testing Lab & Ethical Hacking Portfolio
+﻿# Authorized Penetration Testing Lab & Ethical Hacking Portfolio
 
 [![Track](https://img.shields.io/badge/Track-Ethical%20Hacking-purple.svg)](https://edvyro.in)
 [![Scope](https://img.shields.io/badge/Scope-127.0.0.1%3A3000%20(Loopback)-blue.svg)](#1-task-1-legal-scope-and-isolated-lab)
@@ -15,64 +15,64 @@ This repository constitutes the comprehensive, publication-grade submission for 
 
 ---
 
-## 📑 Repository Navigation & Deliverables Index
+## ðŸ“‘ Repository Navigation & Deliverables Index
 
-```
+```text
 .
-├── README.md                                  # Master Portfolio Hub & Documentation Index
-├── index.html                                 # Interactive Web Portal (GitHub Pages Ready)
-├── package.json                               # Automated test scripts & project metadata
-│
-├── task-1-scope-and-isolated-lab/             # Task 1 Deliverables
-│   ├── rules-of-engagement.md                 # Signed Personal Rules of Engagement (RoE)
-│   ├── network-topology-and-isolation.md      # Lab Network Architecture & Socket Isolation
-│   ├── setup-evidence.md                      # Target Setup Evidence & Startup Logs
-│   ├── baseline-snapshot-manifest.json        # Cryptographic SHA-256 Baseline (Portfolio Upgrade)
-│   └── checklist-task-1.md                    # Completed Official Passing Checklist
-│
-├── task-2-recon-and-attack-surface/           # Task 2 Deliverables
-│   ├── target-verification.md                 # Target Address & Loopback Validation
-│   ├── service-inventory.md                   # Enumerated Services, Banners, Routes & Inputs
-│   ├── attack-surface-diagram.md              # Visual Attack Surface Architecture & Data Flows
-│   ├── sanitized-command-log.md               # Sanitized Terminal Recon Logs & Outputs
-│   ├── risk-hypothesis-matrix.md              # Observation-to-Risk Hypothesis Mapping
-│   ├── triage-and-priority.md                 # Prioritized Threat Triage & Testing Queue (Upgrade)
-│   └── checklist-task-2.md                    # Completed Official Passing Checklist
-│
-├── task-3-owasp-web-testing/                  # Task 3 Deliverables
-│   ├── owasp-findings-table.md                # Sanitized Findings Table (Severity, Cause, Fix)
-│   ├── root-cause-and-impact.md               # Technical Deep-Dives & Business/Regulatory Impact
-│   ├── evidence/                              # Sanitized Non-Destructive Proof of Concept (PoC) Dossiers
-│   │   ├── poc-01-broken-access-control.md    # IDOR in User Profile (CVSS 7.5 High)
-│   │   ├── poc-02-sql-injection.md            # Query Injection in Search (CVSS 8.2 High)
-│   │   ├── poc-03-auth-bruteforce-failure.md  # User Enumeration & No Throttling (CVSS 5.3 Med)
-│   │   ├── poc-04-security-misconfiguration.md# Leaked Banners & Missing Headers (CVSS 5.0 Med)
-│   │   └── poc-05-reflected-xss.md            # Reflected XSS in Feedback (CVSS 6.1 Med)
-│   ├── remediation-recommendations.md         # Secure Code Diffs & Configuration Fixes (Upgrade)
-│   └── checklist-task-3.md                    # Completed Official Passing Checklist
-│
-├── task-4-penetration-test-report-and-retest/ # Task 4 Deliverables
-│   ├── executive-summary.md                   # C-Level Executive Summary & Posture Rating
-│   ├── technical-methodology.md               # PTES & OWASP WSTG v4.2 Assessment Standard
-│   ├── penetration-test-report.md             # Formal Penetration Test Report (CVSS v3.1)
-│   ├── retest-verification-matrix.md          # Formal Retest Findings Log: 100% Fixed (Upgrade)
-│   └── checklist-task-4.md                    # Completed Official Passing Checklist
-│
-├── lab/                                       # Self-Contained Practice Lab Application
-│   ├── server.js                              # Dual-mode server (Vulnerable vs. Secure)
-│   ├── db.js                                  # In-memory synthetic datastore
-│   └── public/index.html                      # Interactive Security Testing Dashboard
-│
-└── scripts/                                   # Automated Assessment & Verification Tooling
-    ├── baseline-snapshot.ps1                  # Generates cryptographic baseline snapshot
-    ├── run-recon.js                           # Controlled local reconnaissance runner
-    ├── test-owasp-findings.js                 # Non-destructive OWASP PoC verification suite
-    └── run-retest.js                          # Automated post-remediation verification runner
+|-- README.md                                  # Master Portfolio Hub & Documentation Index
+|-- index.html                                 # Interactive Web Portal (GitHub Pages Ready)
+|-- package.json                               # Automated test scripts & project metadata
+|
+|-- task-1-scope-and-isolated-lab/             # Task 1 Deliverables
+|   |-- rules-of-engagement.md                 # Signed Personal Rules of Engagement (RoE)
+|   |-- network-topology-and-isolation.md      # Lab Network Architecture & Socket Isolation
+|   |-- setup-evidence.md                      # Target Setup Evidence & Startup Logs
+|   |-- baseline-snapshot-manifest.json        # Cryptographic SHA-256 Baseline (Portfolio Upgrade)
+|   \-- checklist-task-1.md                    # Completed Official Passing Checklist
+|
+|-- task-2-recon-and-attack-surface/           # Task 2 Deliverables (Task 03 in Portal)
+|   |-- target-verification.md                 # Target Address & Loopback Validation
+|   |-- service-inventory.md                   # Enumerated Services, Banners, Routes & Inputs
+|   |-- attack-surface-diagram.md              # Visual Attack Surface Architecture & Data Flows
+|   |-- sanitized-command-log.md               # Sanitized Terminal Recon Logs & Outputs
+|   |-- risk-hypothesis-matrix.md              # Observation-to-Risk Hypothesis Mapping
+|   |-- triage-and-priority.md                 # Prioritized Threat Triage & Testing Queue (Upgrade)
+|   \-- checklist-task-2.md                    # Completed Official Passing Checklist
+|
+|-- task-3-owasp-web-testing/                  # Task 3 Deliverables (Task 04 in Portal)
+|   |-- owasp-findings-table.md                # Sanitized Findings Table (Severity, Cause, Fix)
+|   |-- root-cause-and-impact.md               # Technical Deep-Dives & Business/Regulatory Impact
+|   |-- evidence/                              # Sanitized Non-Destructive Proof of Concept (PoC) Dossiers
+|   |   |-- poc-01-broken-access-control.md    # IDOR in User Profile (CVSS 7.5 High)
+|   |   |-- poc-02-sql-injection.md            # Query Injection in Search (CVSS 8.2 High)
+|   |   |-- poc-03-auth-bruteforce-failure.md  # User Enumeration & No Throttling (CVSS 5.3 Med)
+|   |   |-- poc-04-security-misconfiguration.md# Leaked Banners & Missing Headers (CVSS 5.0 Med)
+|   |   \-- poc-05-reflected-xss.md            # Reflected XSS in Feedback (CVSS 6.1 Med)
+|   |-- remediation-recommendations.md         # Secure Code Diffs & Configuration Fixes (Upgrade)
+|   \-- checklist-task-3.md                    # Completed Official Passing Checklist
+|
+|-- task-4-penetration-test-report-and-retest/ # Task 4 Deliverables (Task 05 in Portal)
+|   |-- executive-summary.md                   # C-Level Executive Summary & Posture Rating
+|   |-- technical-methodology.md               # PTES & OWASP WSTG v4.2 Assessment Standard
+|   |-- penetration-test-report.md             # Formal Penetration Test Report (CVSS v3.1)
+|   |-- retest-verification-matrix.md          # Formal Retest Findings Log: 100% Fixed (Upgrade)
+|   \-- checklist-task-4.md                    # Completed Official Passing Checklist
+|
+|-- lab/                                       # Self-Contained Practice Lab Application
+|   |-- server.js                              # Dual-mode server (Vulnerable vs. Secure)
+|   |-- db.js                                  # In-memory synthetic datastore
+|   \-- public/index.html                      # Interactive Security Testing Dashboard
+|
+\-- scripts/                                   # Automated Assessment & Verification Tooling
+    |-- baseline-snapshot.ps1                  # Generates cryptographic baseline snapshot
+    |-- run-recon.js                           # Controlled local reconnaissance runner
+    |-- test-owasp-findings.js                 # Non-destructive OWASP PoC verification suite
+    \-- run-retest.js                          # Automated post-remediation verification runner
 ```
 
 ---
 
-## 🎯 Executive Summary of Completed Tasks
+## ðŸŽ¯ Executive Summary of Completed Tasks
 
 ### 1. Task 1: Legal Scope and Isolated Lab
 - **Objective:** Establish safe, legal, and reproducible conditions for penetration testing.
@@ -119,7 +119,7 @@ This repository constitutes the comprehensive, publication-grade submission for 
 
 ---
 
-## 📊 Retest Verification Matrix Summary
+## ðŸ“Š Retest Verification Matrix Summary
 
 | Finding ID | Vulnerability Title | OWASP Category | Initial Severity | Post-Remediation Verification Result | Retest Status |
 | :---: | :--- | :--- | :---: | :--- | :---: |
@@ -131,7 +131,7 @@ This repository constitutes the comprehensive, publication-grade submission for 
 
 ---
 
-## 🚀 Quickstart & Reproducibility Guide
+## ðŸš€ Quickstart & Reproducibility Guide
 
 The lab and automated test suites have **zero external dependencies** and execute directly with native Node.js and PowerShell:
 
@@ -164,7 +164,7 @@ Double-click or open `index.html` in any modern web browser to navigate the inte
 
 ---
 
-## 📤 Submission Instructions
+## ðŸ“¤ Submission Instructions
 
 To submit for assessment review:
 1. Initialize Git and commit the workspace:
